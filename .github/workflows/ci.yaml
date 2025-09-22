@@ -1,0 +1,17 @@
+name: Simple CI
+
+on: 
+  push:        # Runs the workflow whenever you push code
+    branches:
+      - main   # Only on main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # GitHub provides this runner (like a VM)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4   # Brings your repo code into the runner
+
+      - name: Run a script
+        run: echo "Hello, GitHub Actions is working!"
